@@ -1,0 +1,7 @@
+**/.git
+**/.gitignore
+**/*.vsix
+node_modules/
+test/
+.vscode/
+package-lock.json

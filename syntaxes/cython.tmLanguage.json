@@ -1,0 +1,72 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Cython",
+  "scopeName": "source.cython",
+  "fileTypes": ["pyx"],
+  "patterns": [
+    {"include": "#extern-from"},
+    {"include": "#declaration-keywords"},
+    {"include": "#c-types"},
+    {"include": "#modifiers"},
+    {"include": "#struct-keywords"},
+    {"include": "#cimport"},
+    {"include": "#include-directive"},
+    {"include": "#gil-keywords"},
+    {"include": "#compile-time"},
+    {"include": "source.python"}
+  ],
+  "repository": {
+    "extern-from": {
+      "patterns": [
+        {
+          "match": "\\b(extern)\\s+(from)\\s+(\"(?:[^\"\\\\]|\\\\.)*\"|'(?:[^'\\\\]|\\\\.)*')",
+          "captures": {
+            "1": {"name": "keyword.other.cython"},
+            "2": {"name": "keyword.other.cython"},
+            "3": {"name": "string.quoted.cython"}
+          }
+        },
+        {
+          "match": "\\b(extern)\\s+(from)\\s+(\\*)",
+          "captures": {
+            "1": {"name": "keyword.other.cython"},
+            "2": {"name": "keyword.other.cython"},
+            "3": {"name": "keyword.operator.cython"}
+          }
+        }
+      ]
+    },
+    "declaration-keywords": {
+      "name": "storage.type.cython",
+      "match": "\\b(cdef|cpdef|ctypedef|fused)\\b"
+    },
+    "c-types": {
+      "name": "storage.type.c.cython",
+      "match": "\\b(void|char|short|int|long|float|double|bint|Py_ssize_t|Py_ucs4|Py_UNICODE|Py_hash_t|size_t|ssize_t|ptrdiff_t)\\b"
+    },
+    "modifiers": {
+      "name": "storage.modifier.cython",
+      "match": "\\b(public|readonly|inline|api|packed|extern|signed|unsigned)\\b"
+    },
+    "struct-keywords": {
+      "name": "keyword.other.cython",
+      "match": "\\b(struct|union|enum)\\b"
+    },
+    "cimport": {
+      "name": "keyword.control.import.cython",
+      "match": "\\bcimport\\b"
+    },
+    "include-directive": {
+      "name": "keyword.control.include.cython",
+      "match": "\\binclude\\b"
+    },
+    "gil-keywords": {
+      "name": "keyword.other.gil.cython",
+      "match": "\\b(nogil|gil)\\b"
+    },
+    "compile-time": {
+      "name": "keyword.control.conditional.cython",
+      "match": "\\b(DEF|IF|ELIF|ELSE)\\b"
+    }
+  }
+}

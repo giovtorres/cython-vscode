@@ -1,0 +1,90 @@
+{
+  "name": "cython-vscode",
+  "displayName": "Cython extension for vscode",
+  "description": "Syntax highlighting for Cython (.pyx, .pxd, .pxi) files",
+  "version": "0.1.0",
+  "publisher": "giovtorres",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "cython",
+    "python",
+    "pyx",
+    "pxd",
+    "pxi",
+    "syntax highlighting"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/giovtorres/cython-vscode"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "vscode-tmgrammar-test test/test.pyx test/test.pxd test/test.pxi"
+  },
+  "devDependencies": {
+    "vscode-tmgrammar-test": "^0.1.3"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "cython",
+        "aliases": [
+          "Cython",
+          "cython"
+        ],
+        "extensions": [
+          ".pyx"
+        ],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "cython-pxd",
+        "aliases": [
+          "Cython Declaration",
+          "Cython Header",
+          "cython-pxd"
+        ],
+        "extensions": [
+          ".pxd"
+        ],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "cython-pxi",
+        "aliases": [
+          "Cython Include",
+          "cython-pxi"
+        ],
+        "extensions": [
+          ".pxi"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "cython",
+        "scopeName": "source.cython",
+        "path": "./syntaxes/cython.tmLanguage.json"
+      },
+      {
+        "language": "cython-pxd",
+        "scopeName": "source.cython.decl",
+        "path": "./syntaxes/cython-pxd.tmLanguage.json"
+      },
+      {
+        "language": "cython-pxi",
+        "scopeName": "source.cython.include",
+        "path": "./syntaxes/cython-pxi.tmLanguage.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "@vscode/vsce": "^3.9.1"
+  }
+}
