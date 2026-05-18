@@ -2,7 +2,7 @@
   "name": "cython-vscode",
   "displayName": "Cython extension for vscode",
   "description": "Syntax highlighting for Cython (.pyx, .pxd, .pxi) files",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "giovtorres",
   "engines": {
     "vscode": "^1.75.0"

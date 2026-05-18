@@ -4,18 +4,32 @@
   "scopeName": "source.cython",
   "fileTypes": ["pyx"],
   "patterns": [
+    {"include": "#cython-decorator"},
     {"include": "#extern-from"},
+    {"include": "#except-plus"},
     {"include": "#declaration-keywords"},
     {"include": "#c-types"},
     {"include": "#modifiers"},
     {"include": "#struct-keywords"},
+    {"include": "#cpp-keywords"},
     {"include": "#cimport"},
     {"include": "#include-directive"},
     {"include": "#gil-keywords"},
+    {"include": "#parallel-keywords"},
     {"include": "#compile-time"},
+    {"include": "#constants"},
     {"include": "source.python"}
   ],
   "repository": {
+    "cython-decorator": {
+      "match": "(@)(cython)(\\.)([\\w.]+)",
+      "captures": {
+        "1": {"name": "punctuation.definition.decorator.cython"},
+        "2": {"name": "entity.name.namespace.cython"},
+        "3": {"name": "punctuation.accessor.cython"},
+        "4": {"name": "support.function.decorator.cython"}
+      }
+    },
     "extern-from": {
       "patterns": [
         {
@@ -36,21 +50,33 @@
         }
       ]
     },
+    "except-plus": {
+      "match": "\\b(except)\\s+(\\+)(\\*)?",
+      "captures": {
+        "1": {"name": "keyword.control.exception.cython"},
+        "2": {"name": "keyword.operator.cython"},
+        "3": {"name": "keyword.operator.cython"}
+      }
+    },
     "declaration-keywords": {
       "name": "storage.type.cython",
-      "match": "\\b(cdef|cpdef|ctypedef|fused)\\b"
+      "match": "\\b(cdef|cpdef|ctypedef|fused|cppclass)\\b"
     },
     "c-types": {
       "name": "storage.type.c.cython",
-      "match": "\\b(void|char|short|int|long|float|double|bint|Py_ssize_t|Py_ucs4|Py_UNICODE|Py_hash_t|size_t|ssize_t|ptrdiff_t)\\b"
+      "match": "\\b(void|char|short|int|long|float|double|bint|Py_ssize_t|Py_ucs4|Py_UNICODE|Py_hash_t|size_t|ssize_t|ptrdiff_t|int8_t|uint8_t|int16_t|uint16_t|int32_t|uint32_t|int64_t|uint64_t|intptr_t|uintptr_t|Py_buffer|wchar_t)\\b"
     },
     "modifiers": {
       "name": "storage.modifier.cython",
-      "match": "\\b(public|readonly|inline|api|packed|extern|signed|unsigned)\\b"
+      "match": "\\b(public|readonly|inline|api|packed|extern|signed|unsigned|const)\\b"
     },
     "struct-keywords": {
       "name": "keyword.other.cython",
       "match": "\\b(struct|union|enum)\\b"
+    },
+    "cpp-keywords": {
+      "name": "keyword.other.cpp.cython",
+      "match": "\\b(new|namespace)\\b"
     },
     "cimport": {
       "name": "keyword.control.import.cython",
@@ -64,9 +90,17 @@
       "name": "keyword.other.gil.cython",
       "match": "\\b(nogil|gil)\\b"
     },
+    "parallel-keywords": {
+      "name": "support.function.builtin.cython",
+      "match": "\\b(prange|parallel)\\b"
+    },
     "compile-time": {
       "name": "keyword.control.conditional.cython",
       "match": "\\b(DEF|IF|ELIF|ELSE)\\b"
+    },
+    "constants": {
+      "name": "constant.language.cython",
+      "match": "\\bNULL\\b"
     }
   }
 }

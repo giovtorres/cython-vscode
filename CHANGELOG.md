@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.1.1]
+
+- Add `@cython.*` decorator highlighting (`boundscheck`, `wraparound`, `cdivision`, etc.)
+- Add `cppclass`, `new`, `namespace` keywords for C++ support
+- Add C++ exception spec highlighting: `except +`, `except +*`
+- Add `const` modifier
+- Add fixed-width integer types: `int8_t`, `uint8_t`, `int32_t`, `uint64_t`, `intptr_t`, etc.
+- Add `prange` and `parallel` from `cython.parallel`
+- Add `NULL` constant
+- Add `Py_buffer` and `wchar_t` types
+
 ## [0.0.1]
 
 - Initial release

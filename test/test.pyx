@@ -134,3 +134,97 @@ ELIF UNAME_SYSNAME == "Darwin":
 ELSE:
 #^^^ keyword.control.conditional.cython
     pass
+
+# --- Cython decorators ---
+
+@cython.boundscheck(False)
+#^^^^^^ entity.name.namespace.cython
+#      ^ punctuation.accessor.cython
+#       ^^^^^^^^^^^ support.function.decorator.cython
+def decorated_foo():
+    pass
+
+@cython.wraparound(False)
+#^^^^^^ entity.name.namespace.cython
+#      ^ punctuation.accessor.cython
+#       ^^^^^^^^^ support.function.decorator.cython
+def decorated_bar():
+    pass
+
+@cython.cdivision(True)
+#^^^^^^ entity.name.namespace.cython
+#       ^^^^^^^^^ support.function.decorator.cython
+def decorated_baz():
+    pass
+
+# --- const modifier ---
+
+cdef const char* name
+#    ^^^^^ storage.modifier.cython
+
+cdef const int* arr
+#    ^^^^^ storage.modifier.cython
+
+# --- cppclass (C++ class declaration) ---
+
+cdef cppclass MyVec:
+#    ^^^^^^^^ storage.type.cython
+    pass
+
+# --- C++ keywords: new, namespace ---
+
+cdef extern from "vector" namespace "std":
+#                         ^^^^^^^^^ keyword.other.cpp.cython
+    pass
+
+x = new MyClass()
+#   ^^^ keyword.other.cpp.cython
+
+# --- C++ except + ---
+
+cdef int cpp_func() except +:
+#                   ^^^^^^ keyword.control.exception.cython
+#                          ^ keyword.operator.cython
+
+cdef int cpp_func2() except +*:
+#                    ^^^^^^ keyword.control.exception.cython
+#                           ^ keyword.operator.cython
+#                            ^ keyword.operator.cython
+
+# --- Fixed-width integer types ---
+
+cdef int8_t a
+#    ^^^^^^ storage.type.c.cython
+
+cdef uint8_t b
+#    ^^^^^^^ storage.type.c.cython
+
+cdef int32_t c
+#    ^^^^^^ storage.type.c.cython
+
+cdef uint64_t d
+#    ^^^^^^^^ storage.type.c.cython
+
+cdef intptr_t e
+#    ^^^^^^^^ storage.type.c.cython
+
+cdef Py_buffer buf
+#    ^^^^^^^^^ storage.type.c.cython
+
+cdef wchar_t w
+#    ^^^^^^^ storage.type.c.cython
+
+# --- NULL constant ---
+
+ptr = NULL
+#     ^^^^ constant.language.cython
+
+# --- parallel keywords ---
+
+from cython.parallel cimport prange, parallel
+#                            ^^^^^^ support.function.builtin.cython
+#                                    ^^^^^^^^ support.function.builtin.cython
+
+for i in prange(n, nogil=True):
+#        ^^^^^^ support.function.builtin.cython
+    pass
