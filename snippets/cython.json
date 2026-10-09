@@ -1,0 +1,37 @@
+{
+  "Cython function (cdef)": {
+    "prefix": "cdef",
+    "body": [
+      "cdef ${1:return_type} ${2:name}(${3:args}):",
+      "    ${0:# TODO}"
+    ],
+    "description": "Cython cdef function"
+  },
+  "Cython class (cdef class)": {
+    "prefix": "cdefclass",
+    "body": [
+      "cdef class ${1:ClassName}:",
+      "    def __cinit__(self):",
+      "        ${0:# init code}"
+    ],
+    "description": "Cython cdef class skeleton"
+  },
+  "Cython import (cimport)": {
+    "prefix": "cimport",
+    "body": ["cimport ${1:module}"],
+    "description": "Cython cimport statement"
+  },
+  "Cython extern from": {
+    "prefix": "extern",
+    "body": [
+      "cdef extern from \"${1:header}\":",
+      "    ${0:# declarations}"
+    ],
+    "description": "Cython extern from block"
+  },
+  "Cython pragma (boundscheck)": {
+    "prefix": "boundscheck",
+    "body": ["@cython.boundscheck(${1:True})"],
+    "description": "Cython boundscheck decorator"
+  }
+}

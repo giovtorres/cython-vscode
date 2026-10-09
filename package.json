@@ -81,6 +81,25 @@
         "language": "cython-pxi",
         "scopeName": "source.cython.include",
         "path": "./syntaxes/cython-pxi.tmLanguage.json"
+      },
+      {
+        "language": "python",
+        "scopeName": "source.python",
+        "path": "./syntaxes/python.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "cython",
+        "path": "./snippets/cython.json"
+      },
+      {
+        "language": "cython-pxd",
+        "path": "./snippets/cython.json"
+      },
+      {
+        "language": "cython-pxi",
+        "path": "./snippets/cython.json"
       }
     ]
   },

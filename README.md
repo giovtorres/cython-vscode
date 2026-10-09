@@ -47,6 +47,20 @@ Syntax highlighting for [Cython](https://cython.org) source files.
 **Python fallthrough**
 - All standard Python syntax via embedded `source.python` grammar
 
+## Snippets
+
+The extension ships a set of useful Cython snippets that work for `.pyx`, `.pxd`, and `.pxi` files.
+
+| Prefix | Description |
+|--------|-------------|
+| `cdef` | Cython `cdef` function skeleton |
+| `cdefclass` | Cython `cdef class` skeleton |
+| `cimport` | Import a Cython module |
+| `extern` | `cdef extern from` block |
+| `boundscheck` | `@cython.boundscheck` decorator |
+
+You can trigger them via the normal VS Code snippet suggestion (Ctrl+Space) or by typing the prefix and pressing **Tab**. Users can also customise or add their own snippets through the VS Code UI.
+
 ## License
 
 MIT
