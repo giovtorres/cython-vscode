@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.2]
+
+- Bump version to 0.1.2.
+- Apply npm audit fix to resolve reported vulnerabilities.
+- Move @vscode/vsce to devDependencies (vsce now a dev dependency).
+
 ## [0.1.1]
 
 - Add `@cython.*` decorator highlighting (`boundscheck`, `wraparound`, `cdivision`, etc.)
