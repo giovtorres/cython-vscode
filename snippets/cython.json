@@ -1,0 +1,163 @@
+{
+  "Cython function (cdef)": {
+    "prefix": "cdef",
+    "body": [
+      "cdef ${1:return_type} ${2:name}(${3:args}):",
+      "    ${0:# TODO}"
+    ],
+    "description": "Cython cdef function"
+  },
+  "Cython class (cdef class)": {
+    "prefix": "cdefclass",
+    "body": [
+      "cdef class ${1:ClassName}:",
+      "    def __cinit__(self):",
+      "        ${0:# init code}"
+    ],
+    "description": "Cython cdef class skeleton"
+  },
+  "Cython import (cimport)": {
+    "prefix": "cimport",
+    "body": ["cimport ${1:module}"],
+    "description": "Cython cimport statement"
+  },
+  "Cython extern from": {
+    "prefix": "extern",
+    "body": [
+      "cdef extern from \"${1:header}\":",
+      "    ${0:# declarations}"
+    ],
+    "description": "Cython extern from block"
+  },
+  "Cython pragma (boundscheck)": {
+    "prefix": "boundscheck",
+    "body": ["@cython.boundscheck(${1:True})"],
+    "description": "Cython boundscheck decorator"
+  },
+  "Cython struct (cdef struct)": {
+    "prefix": "cdefstruct",
+    "body": [
+      "cdef struct ${1:StructName}:",
+      "    ${0:# fields}"
+    ],
+    "description": "Cython cdef struct skeleton"
+  },
+  "Cython union (cdef union)": {
+    "prefix": "cdefunion",
+    "body": [
+      "cdef union ${1:UnionName}:",
+      "    ${0:# fields}"
+    ],
+    "description": "Cython cdef union skeleton"
+  },
+  "Cython enum (cdef enum)": {
+    "prefix": "cdefenum",
+    "body": [
+      "cdef enum ${1:EnumName}:",
+      "    ${2:name1}",
+      "    ${3:name2}",
+      "    ${0:# more names}"
+    ],
+    "description": "Cython cdef enum skeleton"
+  },
+  "Cython extern from with signatures": {
+    "prefix": "externfuncs",
+    "body": [
+      "cdef extern from \"${1:header.h}\":",
+      "    ${2:void} ${3:function_name}(${4:args})"
+    ],
+    "description": "Cython extern from block with function signature"
+  },
+  "Cython nogil block": {
+    "prefix": "nogil",
+    "body": [
+      "with nogil:",
+      "    ${0:# code without GIL}"
+    ],
+    "description": "Cython nogil block"
+  },
+  "Cython gil block": {
+    "prefix": "gil",
+    "body": [
+      "with gil:",
+      "    ${0:# code with GIL}"
+    ],
+    "description": "Cython gil block"
+  },
+  "Cython prange loop": {
+    "prefix": "prange",
+    "body": [
+      "for i in prange(${1:n}, nogil=${2:True}, ${3:schedule='static'}):",
+      "    ${0:# parallel loop body}"
+    ],
+    "description": "Cython prange loop with parallel options"
+  },
+  "Cython cpdef function": {
+    "prefix": "cpdef",
+    "body": [
+      "cpdef ${1:return_type} ${2:name}(${3:args}):",
+      "    ${0:# implementation}"
+    ],
+    "description": "Cython cpdef function with return type"
+  },
+  "Cython cdef class with __cinit__ and __dealloc__": {
+    "prefix": "cdefclassfull",
+    "body": [
+      "cdef class ${1:ClassName}:",
+      "    cdef public ${2:object} ${3:attr}",
+      "",
+      "    def __cinit__(self):",
+      "        ${0:# initialization code}",
+      "",
+      "    def __dealloc__(self):",
+      "        ${0:# cleanup code}"
+    ],
+    "description": "Cython cdef class with __cinit__, __dealloc__, and public attribute"
+  },
+  "Cython distutils C++ config": {
+    "prefix": "distutilscpp",
+    "body": [
+      "# distutils: language = c++",
+      "${0:# distutils configuration}"
+    ],
+    "description": "Distutils configuration for C++ extensions"
+  },
+  "Cython DEF conditional": {
+    "prefix": "compiledef",
+    "body": [
+      "DEF ${1:CONSTANT} = ${2:value}",
+      "${0:# more definitions}"
+    ],
+    "description": "Cython compile-time DEF definition"
+  },
+  "Cython IF conditional": {
+    "prefix": "ifdef",
+    "body": [
+      "IF ${1:condition}:",
+      "    ${2:# code}",
+      "ELIF ${3:other_condition}:",
+      "    ${4:# else if code}",
+      "ELSE:",
+      "    ${0:# else code}"
+    ],
+    "description": "Cython compile-time IF/ELIF/ELSE conditional"
+  },
+  "Python memoryview syntax": {
+    "prefix": "memview",
+    "body": [
+      "cdef ${1:double}[:${2:}] ${3:name}",
+      "${0:# memoryview declaration}"
+    ],
+    "description": "Cython memoryview syntax"
+  },
+  "Cython cdivision decorator": {
+    "prefix": "cdivision",
+    "body": ["@cython.cdivision(${1:True})"],
+    "description": "Cython cdivision decorator"
+  },
+  "Cython wraparound decorator": {
+    "prefix": "wraparound",
+    "body": ["@cython.wraparound(${1:False})"],
+    "description": "Cython wraparound decorator"
+  }
+}

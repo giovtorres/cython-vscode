@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.0]
+
+- Added new snippets for common Cython patterns:
+  - cdef, cdefclass, cdefclassfull - function and class skeletons
+  - cpdef - cpdef function with return type
+  - cimport, extern, externfuncs - imports and extern declarations
+  - cdefstruct, cdefunion, cdefenum - data structure declarations
+  - boundscheck, cdivision, wraparound - @cython decorators
+  - nogil, gil - GIL management blocks
+  - prange - parallel loop with nogil
+  - distutilscpp - C++ extension configuration
+  - compiledef - compile-time DEF definition
+  - ifdef - compile-time IF/ELIF/ELSE conditionals
+  - memview - memoryview syntax
+
 ## [0.1.2]
 
 - Bump version to 0.1.2.

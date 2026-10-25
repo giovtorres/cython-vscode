@@ -47,6 +47,33 @@ Syntax highlighting for [Cython](https://cython.org) source files.
 **Python fallthrough**
 - All standard Python syntax via embedded `source.python` grammar
 
+## Snippets
+
+The extension ships a comprehensive set of useful Cython snippets that work for `.pyx`, `.pxd`, and `.pxi` files.
+
+| Prefix | Description |
+|--------|-------------|
+| `cdef` | Cython `cdef` function skeleton |
+| `cpdef` | Cython `cpdef` function with return type |
+| `cdefclass` | Cython `cdef class` skeleton |
+| `cdefclassfull` | `cdef class` with `__cinit__`, `__dealloc__`, public attributes |
+| `cimport` | Import a Cython module |
+| `extern` | `cdef extern from` block |
+| `externfuncs` | `cdef extern from` with function signature |
+| `boundscheck` | `@cython.boundscheck` decorator |
+| `cdivision` | `@cython.cdivision` decorator |
+| `wraparound` | `@cython.wraparound` decorator |
+| `nogil` | `with nogil:` block |
+| `gil` | `with gil:` block |
+| `prange` | `prange` loop with parallel options |
+| `cdefstruct` | `cdef struct` skeleton |
+| `cdefunion` | `cdef union` skeleton |
+| `cdefenum` | `cdef enum` skeleton |
+| `distutilscpp` | `# distutils: language = c++` config |
+| `compiledef` | Compile-time DEF definition |
+| `ifdef` | `IF`/`ELIF`/`ELSE` compile-time conditional |
+| `memview` | Memoryview syntax |
+
 ## License
 
 MIT
